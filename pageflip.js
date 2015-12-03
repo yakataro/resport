@@ -31,9 +31,12 @@
 	var pages = book.getElementsByTagName( "section" );
 	
 	// ▼ ---------- 20151203 add start ---------- ▼
+	// aタグを保持しておきます。
 	var anchors = book.getElementsByTagName( "a" );
+	
 	// pagesの数を再利用したいので変数に保持しておきます。
 	var pagesLength = pages.length;
+	
 	// canvasのz-indexを1にしておきます。
 	canvas.style.zIndex = "1";
 	// ▲ ---------- 20151203 add end ---------- ▲
@@ -125,6 +128,7 @@
 				flips[page - 1].dragging = true;
 				
 				// ▼ ---------- 20152303 add start ---------- ▼
+				// isFlippingはページめくり中だけtrueになります。
 				flips[page - 1].isFlipping = true;
 				// ▲ ---------- 20152303 add end ---------- ▲
 				
@@ -191,8 +195,10 @@
 			
 			// ▼ ---------- 20152303 add start ---------- ▼
 			else if (flip.isFlipping && Math.abs(flip.target) === 1) {
+				// このif文の中身はアニメーションが終了した瞬間だけ実行されます。
 				// アニメーションが終了したらcanvasをpagesより下にします。
 				canvas.style.zIndex = "1";
+				// isFlippingもfalseになります。
 				flip.isFlipping = false;
 			}
 			// ▲ ---------- 20152303 add end ---------- ▲
