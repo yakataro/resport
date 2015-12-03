@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="遠山隆広のポートフォリオです。">
+<meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
+<link rel="stylesheet" media="all" type="text/css" href="css/style.css" />
+<!-- ※デフォルトのスタイル（style.css） -->
+<link rel="stylesheet" media="all" type="text/css" href="css/tablet.css" />
+<!-- ※タブレット用のスタイル（tablet.css） -->
+<link rel="stylesheet" media="all" type="text/css" href="css/smart.css" />
+<!-- ※スマートフォン用のスタイル（smart.css） -->
+
+<title>Online Portfolio</title>
+<!--<link rel="stylesheet" href="css/sample.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>-->
+
+<script src="jquery-1.11.3.min.js"></script>
+<script>
+$(function(){
+  $("#toggle").click(function(){
+    $("#menu").slideToggle();
+    return false;
+  });
+  $(window).resize(function(){
+    var win = $(window).width();
+    var p = 480;
+    if(win > p){
+      $("#menu").show();
+    } else {
+      $("#menu").hide();
+    }
+  });
+});
+</script>
+
+</head>
+<body>
+		<div id="my_header">
+		 <h1><a href="index.html"><img src="images/title01.png" class="img03" alt="サンプルポートフォリオ"></a></h1>
+		</div>
+		<div id="my_navi">
+			<div id="toggle"><a href="#">MENU</a></div>
+			<ul id="menu" class="">
+			 	<li><a href="index.html">TOP</a></li>
+				<li><a href="history.html">HISTORY</a></li>
+			 	<li><a href="production.html">ACTUAL RESULTS</a></li>
+			 	<li><a href="form.html">FORM</a></li>
+			</ul>
+		 </div>
+			<div id="my_main">
+				<div id="my_contents04">
+					<ul id="pankuzu">
+					　<li><a href="index.html">TOP</a> &gt;</li>
+					　<li>ACTUAL RESULTS</li>
+					</ul>
+					<p id="my_title">ACTUAL RESULTS</p>
+					<div id="my_skill">
+						<div id="book">
+							<canvas id="pageflip-canvas"></canvas>
+							<div id="pages">
+								<section>
+									<div>
+										<h2>アサヒビール/CSR活動</h2>
+										<p id="siteg"><img src="images/site1.png" width="50px" float="right"></p>
+										<p>URL:<a href="http://www.asahibeer.co.jp/csr/mng/index.html" target="_blank">http://www.asahibeer.co.jp/csr/mng/index.html</a></p>
+										<p>作業実績<br />ナビゲーションデザインの修正、メインコンテンツのデザイン修正<br />担当ページ数20ページ<br />備考<br />従来のデザインが古いもので<br />あったため他のページに<br />合わせたナビゲーションと<br />コンテンツの修正となります。</p>
+									</div>
+								</section>
+								<section>
+									<div>
+										<h2>リハビリネット</h2>
+										<p id="siteg"><img src="images/site2.png" width="50px" float="right"></p>
+										<p>URL:<a href="http://www.rehabili.net/" target="_blank">http://www.rehabili.net/</a></p>
+										<p>作業実績<br />メインコンテンツのデザイン変更、ライティング業務、実運用<br />担当ページ数10ページ<br />備考<br />リハビリに関する質問の<br />更新をおこないつつ、<br />新規ページの制作や流動数の<br />調査を行いコンバージョンを<br />上げていました。</p>
+									</div>
+								</section>
+								<section>
+									<div>
+										<h2>おいらん乙女 ～淫れそめにし～</h2>
+										<p id="siteg02"><img src="images/site3.png" width="50px" float="right"></p>
+										<p>URL:<a href="http://www.dmm.co.jp/netgame_s/oiran/" target="_blank">http://www.dmm.co.jp/netgame_s/oiran/</a></p>
+										<p>作業実績<br />新規ゲームページのマークアップ、イベントページの制作、サイトデザイン修正<br />担当ページ数10ページ～<br />備考<br />新規で配信するページの制作と<br />定期的に配信するページの<br />マークアップが主。<br />PC版とSP版、Mobile版に対応。</p>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+					<div id="my_footer04">Copyright (C) 2015</div>
+				</div>
+			 </div>
+
+<script type="text/javascript" src="pageflip.js"></script>
+<!-- Jquery -->
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+/*===============================================
+œtablet.css ‰æ–Ê‚Ì‰¡•‚ª768px‚Ü‚Å
+===============================================*/
+@media screen and (max-width: 768px){
+img{
+max-width: 100%;
+height: auto;
+width /***/:auto;@
+}
+#container{
+width:100%;
+}
+}

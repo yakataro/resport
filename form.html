@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="遠山隆広のポートフォリオです。">
+<meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
+<link rel="stylesheet" media="all" type="text/css" href="css/style.css" />
+<!-- ※デフォルトのスタイル（style.css） -->
+<link rel="stylesheet" media="all" type="text/css" href="css/tablet.css" />
+<!-- ※タブレット用のスタイル（tablet.css） -->
+<link rel="stylesheet" media="all" type="text/css" href="css/smart.css" />
+<!-- ※スマートフォン用のスタイル（smart.css） -->
+
+<title>Online Portfolio</title>
+<!--<link rel="stylesheet" href="css/sample.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>-->
+
+<script src="jquery-1.11.3.min.js"></script>
+<script>
+$(function(){
+  $("#toggle").click(function(){
+    $("#menu").slideToggle();
+    return false;
+  });
+  $(window).resize(function(){
+    var win = $(window).width();
+    var p = 480;
+    if(win > p){
+      $("#menu").show();
+    } else {
+      $("#menu").hide();
+    }
+  });
+});
+</script>
+
+</head>
+<body>
+		<div id="my_header">
+		 <h1><a href="index.html"><img src="images/title01.png" class="img03" alt="サンプルポートフォリオ"></a></h1>
+		</div>
+		<div id="my_navi">
+			<div id="toggle"><a href="#">MENU</a></div>
+			<ul id="menu" class="">
+				<li><a href="index.html">TOP</a></li>
+				<li><a href="history.html">HISTORY</a></li>
+			 	<li><a href="production.html">ACTUAL RESULTS</a></li>
+			 	<li><a href="form.html">FORM</a></li>
+			</ul>
+		 </div>
+			<div id="my_main">
+				<div id="my_contents06">
+					<ul id="pankuzu">
+					　<li><a href="index.html">TOP</a> &gt;</li>
+					　<li>FORM</li>
+					</ul>
+					<p id="my_title">FORM</p>
+					<div id="my_top02">
+				 	<form action="/my-handling-form-page" method="post">
+					    <div>
+					        <label for="name">お名前:</label>
+					        <input type="text" id="name" />
+					    </div>
+					    <div>
+					        <label for="mail">アドレス:</label>
+					        <input type="email" id="mail" />
+					    </div>
+					    <div>
+					        <label for="msg">内容:</label>
+					        <textarea id="msg"></textarea>
+					    </div>
+
+					    <div class="button">
+        					<button type="submit">この内容で送信</button>
+    					    </div>
+					</form>
+
+					</div>
+				</div>
+			 </div>
+				<div id="my_footer">Copyright (C) 2015</div>
+
+
+<!-- Jquery -->
+
+</body>
+</html>

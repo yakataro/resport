@@ -1,0 +1,479 @@
+/*===============================================
+●smart.css  画面の横幅が768pxまで
+===============================================*/
+
+@media only screen and (max-width: 768px) {
+    #menu li{
+    border-bottom: 1px solid #fff;
+  }
+}
+
+
+/*===============================================
+●smart.css  画面の横幅が479pxまで
+===============================================*/
+@media screen and (max-width:479px){
+img{
+max-width: 100%;
+height: auto;
+width /***/:auto;　
+}
+
+.slide img{
+max-width: 100%;
+height: auto;
+width /***/:auto;　
+}
+
+* { 
+	margin : 0 ; 
+	padding : 0 ; 
+}
+
+#container{
+width:100%;
+}
+
+#my_header { 
+}
+
+#my_title {
+	font-size: 30px;
+	border-bottom:3px solid #FF8D00;
+	padding:10px 0;
+}
+
+
+#my_footer { 
+	/*width: 450px;*/
+	height: 15px;
+	margin: 10px;
+	font-size: 80%;
+	text-align:center;
+}
+
+#my_contents {
+	 clear:both;
+	 height: auto;
+	 position:relative;
+	 padding: 0px 10px;
+}
+
+#menu{
+    display: none;
+  }
+  #menu li{
+    width: 100%;
+  }
+  #menu li a{
+    display: block;
+    padding: 12px 0 10px;
+    background: #FF6500;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+  }
+  #toggle{
+    display: block;
+    position: relative;
+    width: 100%;
+    background: #FF8D00;
+  }
+  #toggle a{
+    display: block;
+    position: relative;
+    padding: 12px 0 10px;
+    border-bottom: 1px solid #FF8D00;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+  }
+  #toggle:before{
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    background: #fff;
+  }
+  #toggle a:before, #toggle a:after{
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    width: 20px;
+    height: 4px;
+    background: #FF6500;
+  }
+  #toggle a:before{
+    margin-top: -6px;
+  }
+  #toggle a:after{
+    margin-top: 2px;
+  }
+ 
+ #my_top{
+	/*width: 450px;*/
+	margin-bottom: 10px;
+}
+
+/* スライドショー部分の枠 */
+
+/* パンくず */
+#pankuzu {
+	padding: 3px;
+}
+#pankuzu li {
+	display: inline;
+}
+/* パンくず */
+
+/* 文字のせ */
+#img-box{
+  position: relative;
+}
+#img-box-mini{
+  position: absolute;
+  color: #000;
+ }
+#img-box-text{
+  text-align: center;
+  width: 100%;
+}
+
+.shadow{
+text-shadow: 5px 5px 1px #999999;
+font-size:xx-large;
+}
+
+/* スライドショー */
+
+/* スライドサイズ */
+
+.slider {
+  /*width: 450px;*/
+  height: 200px;
+  overflow: hidden;
+  position: relative;  
+}
+
+.slider .slide {
+  width: 456px;
+  height: 200px;
+  border: 1px solid #fff;
+  float: left;
+}
+
+.slider .slideSet {
+  position: absolute;
+}
+
+/* スライドサイズ */
+
+/* ボタン位置 */
+
+.slider-prev,
+.slider-next {
+	margin-top: -15px;
+	padding: 0;
+	background: none;
+	border: none;
+	position: absolute;
+	top: 50%;
+	font-size: 30px;
+	line-height: 1;
+	cursor: pointer;
+}
+
+/* ボタン位置 */
+
+/* 前へ */
+
+.slider-prev {
+	left: 12px;
+	background-image:url('../images/leftI.png');
+	background-size: cover;
+	width: 30px;
+	height: 30px;
+}
+
+/* 前へ */
+
+/* 次へ */
+
+.slider-next {
+	right: 12px;
+	background-image:url('../images/rightI.png');
+	background-size: cover;
+	width: 30px;
+	height: 30px;
+}
+
+/* 次へ */
+
+/* スライドショー */
+	
+/* 本文 */
+.w01 {
+	width:94%;
+	height: auto;
+	margin-top: 10px;
+	padding: 10px 13px 10px 13px; 
+	border-style: solid ;
+	border-width: 1px; 
+	border-color: #FF6E00;  
+	border-radius: 10px;
+	background-color: #FFEDC3; 
+}
+
+.w001 {
+	width:94%;
+	height: auto;
+	margin-top: 10px;
+	padding: 10px 13px 10px 13px; 
+	border-style: solid ;
+	border-width: 1px; 
+	border-color: #FF6E00;  
+	border-radius: 10px;
+	background-color: #FFEDC3; 
+}
+
+.sub_title {
+	font-weight: bolder;
+	padding-bottom: 5px;
+}
+
+
+
+
+
+/*===============================================
+●ACTUAL RESULTSページ
+===============================================*/
+#my_contents04 {
+	 height: 500px;
+	 position:relative;
+	 padding: 0px 10px;
+}
+
+/* ページめくり */
+
+#book {
+	background: url("../images/book.png") no-repeat;
+	background-size: contain;
+	width: 675px;
+	height: 0;
+	position: absolute;
+	left: 40%;
+	top: 45%;
+	margin-left: -400px;
+	margin-top: -125px;
+	padding-top: 60%;
+}
+
+#pages section {
+	background: url("../images/paper.png") no-repeat;
+	display: block;
+	width: 330px;
+	height: 250px;
+	position: absolute;
+	left: 337px;
+	top: 5px;
+	overflow: hidden;
+}
+	#pages section>div {
+		display: block;
+		width: 330px;
+		height: 250px;
+		font-size: 12px;
+	}
+	#pages section p,
+	#pages section h2 {
+		padding: 3px 35px;
+		line-height: 1.4em;
+		text-align: justify;
+	}
+	#pages section h2{
+		margin: 15px 0 10px;
+	}
+
+#pageflip-canvas {
+	position: absolute;
+	z-index: 100;
+}
+
+/* ページめくり */
+
+.site01{
+	margin-top: 10px;
+}
+
+.site02{
+	margin-top: 10px;
+}
+
+.site03{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#sitef{
+	margin-top: 5px;
+	font:small-caption;
+	font-weight:bold;
+}
+
+#siteg{
+	width: 130px;
+    	float: right;
+   	position: absolute;
+    	top: 155px;
+    	left: 155px;
+}
+
+#siteg02{
+	width: 130px;
+    	float: right;
+   	position: absolute;
+    	top: 120px;
+    	left: 160px;
+}
+
+.w04 {
+	clear:both;
+	width:94%;
+	border-style: solid ;
+	border-width: 1px; 
+	padding: 10px 13px 10px 13px; 
+	border-color: #3DA3F6;  
+	background-color: #EFF8FF; 
+	border-radius: 10px;
+}
+
+#my_footer04 { 
+	width: 479px;
+    	height: 15px;
+    	font-size: 80%;
+    	position: fixed;
+    	top: 500px;
+    	left: 170px;
+}
+
+
+
+
+/*===============================================
+●HISTORYページ
+===============================================*/
+
+#my_contents05 {
+	 clear:both;
+	 height: auto;
+	 position:relative;
+	 padding: 0px 10px;
+}
+
+/* メインコンテンツ */
+
+
+
+/*===============================================
+●FORMページ
+===============================================*/
+#my_top02{
+	width: auto;
+	margin-bottom: 10px;
+	margin-top:10px;
+}
+
+#my_contents06 {
+	 clear:both;
+	 height: auto;
+	 position:relative;
+	 padding: 0px 10px;
+}
+
+
+form {
+    /* フォームをページの中央に置く */
+    margin: 0 auto;
+    width: auto;
+    /* フォームの範囲がわかるようにする */
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+}
+
+form div + div {
+    margin-top: 1em;
+}
+
+label {
+    /* すべてのラベルを同じサイズにして、きちんと揃える */
+    display: inline-block;
+    width: 60px;
+    text-align: right;
+}
+
+input, textarea {
+    /* すべてのテキストフィールドのフォント設定を一致させる
+       デフォルトで、textarea は等幅フォントが設定されている */
+    font: 1em sans-serif;
+
+    /* すべてのテキストフィールドを同じサイズにする */
+    width: 300px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    /* テキストフィールドのボーダーの外見を同一にする */
+    border: 1px solid #999;
+}
+
+input[type=text] {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+input[type=email] {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+input:focus, textarea:focus {
+    /* アクティブな要素を少し強調する */
+    border-color: #000;
+}
+
+textarea {
+    /* 複数行のテキストフィールドをラベルにきちんと揃える */
+    vertical-align: top;
+
+    /* テキスト入力に十分な領域を与える */
+    height: 5em;
+
+    /* ユーザが textarea を垂直方向にリサイズできるようにする
+       これが動作しないブラウザもある */
+    resize: vertical;
+
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.button {
+    /* ボタンを他のテキストフィールドと同じ場所に置く */
+    padding-left: 0px; /* label 要素と同じサイズ */
+}
+button {
+    /* このマージンは、ラベルとテキストフィールドの間のスペースと
+       おおよそ同じスペースを表す */
+    margin-left: .5em;
+}
+
+
+
+
+}

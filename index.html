@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="遠山隆広のポートフォリオです。">
+<meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
+<link rel="stylesheet" media="all" type="text/css" href="css/style.css" />
+<!-- ※デフォルトのスタイル（style.css） -->
+<link rel="stylesheet" media="all" type="text/css" href="css/tablet.css" />
+<!-- ※タブレット用のスタイル（tablet.css） -->
+<link rel="stylesheet" media="all" type="text/css" href="css/smart.css" />
+<!-- ※スマートフォン用のスタイル（smart.css） -->
+
+<title>HTML5サンプル</title>
+<!--<link rel="stylesheet" href="css/sample.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>-->
+
+<script src="jquery-1.11.3.min.js"></script>
+<script>
+$(function(){
+  $("#toggle").click(function(){
+    $("#menu").slideToggle();
+    return false;
+  });
+  $(window).resize(function(){
+    var win = $(window).width();
+    var p = 480;
+    if(win > p){
+      $("#menu").show();
+    } else {
+      $("#menu").hide();
+    }
+  });
+});
+</script>
+
+</head>
+<body>
+		<div id="my_header">
+		 <h1><a href="index.html"><img src="images/title01.png" class="img03" alt="サンプルポートフォリオ"></a></h1>
+		</div>
+		<div id="my_navi">
+			<div id="toggle"><a href="#">MENU</a></div>
+			<ul id="menu" class="">
+				<li><a href="index.html">TOP</a></li>
+				<li><a href="history.html">HISTORY</a></li>
+			 	<li><a href="production.html">ACTUAL RESULTS</a></li>
+			 	<li><a href="form.html">FORM</a></li>
+			</ul>
+		 </div>
+			<div id="my_main">
+				<div id="my_contents">
+					<div id="my_top">
+						<div class="slider">
+						  <div class="slideSet">
+						    <div class="slide"><div id="img-box"><div id="img-box-mini"><p  id="img-box-text" class="shadow">経歴</p></div></div><a href="history.html"><img src="images/syorui.jpg" alt="経歴"></a></div>
+						    <div class="slide"><div id="img-box"><div id="img-box-mini"><p  id="img-box-text" class="shadow">制作実績</p></div></div><a href="production.html"><img src="images/seisaku.jpg" alt="制作"></a></div>
+						  </div>
+						<button class="slider-prev"></button>
+						<button class="slider-next"></button>
+						</div>
+					</div>
+				 	<div class="w01">
+					<p class="sub_title">自己紹介</p><p>遠山隆広のポートフォリオです。<br />
+					Webコーダーとして、約3年間働きました。<br />
+					業界としては主に、ゲーム業界に約3年・Web業界に約半年在籍していました。<br />
+					職種としては、Webコーディングの他に、サイトの運営やマークアップ、企画・ディレクションをおこなってきました。</p>
+					</div>
+					<div class="w001">
+					<p class="sub_title">スキル</p><p>HTML5、CSS3、Java script(JQuery)、PHP、Word Press、Photo shop、illustrator、After Effects。<br />モバイル・スマートフォン向けサイト、ランディングページ、レスポンシブサイト制作経験<br />また、このサイトはレスポンシブに対応しています。</p>
+					</div>
+
+				</div>
+				<div id="my_footer">Copyright (C) 2015</div>
+			 </div>
+
+<script>
+(function(){
+var slideWidth = $('.slide').outerWidth();	// .slideの幅を取得して代入
+var slideNum = $('.slide').length;	// .slideの数を取得して代入
+var slideSetWidth = slideWidth * slideNum;	// .slideの幅×数で求めた値を代入
+$('.slideSet').css('width', slideSetWidth);	// .slideSetのスタイルシートにwidth: slideSetWidthを指定
+
+var slideCurrent = 0;	// 現在地を示す変数
+
+// アニメーションを実行する独自関数
+var sliding = function(){
+	// slideCurrentが0以下だったら
+	if( slideCurrent < 0 ){
+		slideCurrent = slideNum - 1;
+
+	// slideCurrentがslideNumを超えたら
+	}else if( slideCurrent > slideNum - 1 ){	// slideCUrrent >= slideNumでも可
+		slideCurrent = 0;
+
+	}
+
+	$('.slideSet').animate({
+		left: slideCurrent * -slideWidth
+	});
+}
+
+// 前へボタンが押されたとき
+$('.slider-prev').click(function(){
+	slideCurrent--;
+	sliding();
+});
+
+// 次へボタンが押されたとき
+$('.slider-next').click(function(){
+	slideCurrent++;
+	sliding();
+});
+}());
+</script>
+<!-- Jquery -->
+
+</body>
+</html>
