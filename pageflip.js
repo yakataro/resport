@@ -30,7 +30,6 @@
 	// List of all the page elements in the DOM
 	var pages = book.getElementsByTagName( "section" );
 	
-	// ▼ ---------- 20151203 add start ---------- ▼
 	// aタグを保持しておきます。
 	var anchors = book.getElementsByTagName( "a" );
 	
@@ -39,10 +38,8 @@
 	
 	// canvasのz-indexを1にしておきます。
 	canvas.style.zIndex = "1";
-	// ▲ ---------- 20151203 add end ---------- ▲
 	
 	// Organize the depth of our pages and create the flip definitions
-	// ▽ ---------- 20151203 delete start ---------- ▽
 	/*
 	for( var i = 0, len = pages.length; i < len; i++ ) {
 		pages[i].style.zIndex = len - i;
@@ -59,9 +56,7 @@
 		} );
 	}
 	*/
-	// △ ---------- 20151203 delete end ---------- △
 	
-	// ▼ ---------- 20152303 add start ---------- ▼
 	for( var i = 0; i < pagesLength; i++ ) {
 		// 一番下になるページがbookより上になるようにします。
 		pages[i].style.zIndex = String( pagesLength - i + 1 );
@@ -77,7 +72,6 @@
 			dragging: false
 		} );
 	}
-	// ▲ ---------- 20151203 add end ---------- ▲
 	
 	// Resize the canvas to match the book size
 	canvas.width = BOOK_WIDTH + ( CANVAS_PADDING * 2 );
@@ -94,7 +88,6 @@
 	document.addEventListener( "mousedown", mouseDownHandler, false );
 	document.addEventListener( "mouseup", mouseUpHandler, false );
 	
-	// ▼ ---------- 20152303 add start ---------- ▼
 	// aタグをクリックした時はdocumentにクリックが伝わらないようにして、
 	// mouseDownHandler()が発火しないようにします。
 	for ( var i = 0, l = anchors.length; i < l; i++ ) {
@@ -106,7 +99,6 @@
 		// event.stopPropagation()を使うことでaタグで止めることができます。
 		event.stopPropagation();
 	}
-	// ▲ ---------- 20151203 add end ---------- ▲
 	
 	function mouseMoveHandler( event ) {
 		// Offset mouse position so that the top of the book spine is 0,0
@@ -119,33 +111,25 @@
 		if (Math.abs(mouse.x) < PAGE_WIDTH) {
 			if (mouse.x < 0 && page - 1 >= 0) {
 				
-				// ▼ ---------- 20152303 add start ---------- ▼
 				// canvasのアニメーション中はcanvasがpagesより上に来るようにします。
 				canvas.style.zIndex = String( pagesLength + 2 );
-				// ▲ ---------- 20152303 add end ---------- ▲
 				
 				// We are on the left side, drag the previous page
 				flips[page - 1].dragging = true;
 				
-				// ▼ ---------- 20152303 add start ---------- ▼
 				// isFlippingはページめくり中だけtrueになります。
 				flips[page - 1].isFlipping = true;
-				// ▲ ---------- 20152303 add end ---------- ▲
 				
 			}
 			else if (mouse.x > 0 && page + 1 < flips.length) {
 				
-				// ▼ ---------- 20152303 add start ---------- ▼
 				// canvasのアニメーション中はcanvasがpagesより上に来るようにします。
 				canvas.style.zIndex = String( pagesLength + 2 );
-				// ▲ ---------- 20152303 add end ---------- ▲
 				
 				// We are on the right side, drag the current page
 				flips[page].dragging = true;
 				
-				// ▼ ---------- 20152303 add start ---------- ▼
 				flips[page].isFlipping = true;
-				// ▲ ---------- 20152303 add end ---------- ▲
 				
 			}
 		}
@@ -193,7 +177,6 @@
 				drawFlip( flip );
 			}
 			
-			// ▼ ---------- 20152303 add start ---------- ▼
 			else if (flip.isFlipping && Math.abs(flip.target) === 1) {
 				// このif文の中身はアニメーションが終了した瞬間だけ実行されます。
 				// アニメーションが終了したらcanvasをpagesより下にします。
@@ -201,7 +184,6 @@
 				// isFlippingもfalseになります。
 				flip.isFlipping = false;
 			}
-			// ▲ ---------- 20152303 add end ---------- ▲
 		}
 		
 	}
