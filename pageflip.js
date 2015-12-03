@@ -30,7 +30,17 @@
 	// List of all the page elements in the DOM
 	var pages = book.getElementsByTagName( "section" );
 	
+	// ▼ ---------- 20151203 add start ---------- ▼
+	var anchors = book.getElementsByTagName( "a" );
+	// pagesの数を再利用したいので変数に保持しておきます。
+	var pagesLength = pages.length;
+	// canvasのz-indexを1にしておきます。
+	canvas.style.zIndex = "1";
+	// ▲ ---------- 20151203 add end ---------- ▲
+	
 	// Organize the depth of our pages and create the flip definitions
+	// ▽ ---------- 20151203 delete start ---------- ▽
+	/*
 	for( var i = 0, len = pages.length; i < len; i++ ) {
 		pages[i].style.zIndex = len - i;
 		
@@ -45,6 +55,26 @@
 			dragging: false
 		} );
 	}
+	*/
+	// △ ---------- 20151203 delete end ---------- △
+	
+	// ▼ ---------- 20152303 add start ---------- ▼
+	for( var i = 0; i < pagesLength; i++ ) {
+		// 一番下になるページがbookより上になるようにします。
+		pages[i].style.zIndex = String( pagesLength - i + 1 );
+		// 後は同じ。
+		flips.push( {
+			// Current progress of the flip (left -1 to right +1)
+			progress: 1,
+			// The target value towards which progress is always moving
+			target: 1,
+			// The page DOM element related to this flip
+			page: pages[i], 
+			// True while the page is being dragged
+			dragging: false
+		} );
+	}
+	// ▲ ---------- 20151203 add end ---------- ▲
 	
 	// Resize the canvas to match the book size
 	canvas.width = BOOK_WIDTH + ( CANVAS_PADDING * 2 );
@@ -61,6 +91,20 @@
 	document.addEventListener( "mousedown", mouseDownHandler, false );
 	document.addEventListener( "mouseup", mouseUpHandler, false );
 	
+	// ▼ ---------- 20152303 add start ---------- ▼
+	// aタグをクリックした時はdocumentにクリックが伝わらないようにして、
+	// mouseDownHandler()が発火しないようにします。
+	for ( var i = 0, l = anchors.length; i < l; i++ ) {
+		anchors[i].addEventListener( "mousedown", anchorMouseDownHandler, false );
+	};
+	
+	function anchorMouseDownHandler( event ) {
+		// 通常はイベントはクリックした要素からDOMを遡ってdocumentまで届きます。
+		// event.stopPropagation()を使うことでaタグで止めることができます。
+		event.stopPropagation();
+	}
+	// ▲ ---------- 20151203 add end ---------- ▲
+	
 	function mouseMoveHandler( event ) {
 		// Offset mouse position so that the top of the book spine is 0,0
 		mouse.x = event.clientX - book.offsetLeft - ( BOOK_WIDTH / 2 );
@@ -71,12 +115,34 @@
 		// Make sure the mouse pointer is inside of the book
 		if (Math.abs(mouse.x) < PAGE_WIDTH) {
 			if (mouse.x < 0 && page - 1 >= 0) {
+				
+				// ▼ ---------- 20152303 add start ---------- ▼
+				// canvasのアニメーション中はcanvasがpagesより上に来るようにします。
+				canvas.style.zIndex = String( pagesLength + 2 );
+				// ▲ ---------- 20152303 add end ---------- ▲
+				
 				// We are on the left side, drag the previous page
 				flips[page - 1].dragging = true;
+				
+				// ▼ ---------- 20152303 add start ---------- ▼
+				flips[page - 1].isFlipping = true;
+				// ▲ ---------- 20152303 add end ---------- ▲
+				
 			}
 			else if (mouse.x > 0 && page + 1 < flips.length) {
+				
+				// ▼ ---------- 20152303 add start ---------- ▼
+				// canvasのアニメーション中はcanvasがpagesより上に来るようにします。
+				canvas.style.zIndex = String( pagesLength + 2 );
+				// ▲ ---------- 20152303 add end ---------- ▲
+				
 				// We are on the right side, drag the current page
 				flips[page].dragging = true;
+				
+				// ▼ ---------- 20152303 add start ---------- ▼
+				flips[page].isFlipping = true;
+				// ▲ ---------- 20152303 add end ---------- ▲
+				
 			}
 		}
 		
@@ -123,6 +189,13 @@
 				drawFlip( flip );
 			}
 			
+			// ▼ ---------- 20152303 add start ---------- ▼
+			else if (flip.isFlipping && Math.abs(flip.target) === 1) {
+				// アニメーションが終了したらcanvasをpagesより下にします。
+				canvas.style.zIndex = "1";
+				flip.isFlipping = false;
+			}
+			// ▲ ---------- 20152303 add end ---------- ▲
 		}
 		
 	}
