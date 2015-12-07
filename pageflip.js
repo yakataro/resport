@@ -114,6 +114,8 @@
 +				canvas.style.zIndex = String( pagesLength + 2 );
 				// We are on the left side, drag the previous page
 				flips[page - 1].dragging = true;
+				// isFlippingはページめくり中だけtrueになります。
++				flips[page - 1].isFlipping = true;
 			}
 			else if (mouse.x > 0 && page + 1 < flips.length) {
 				// We are on the right side, drag the current page
