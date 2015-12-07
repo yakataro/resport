@@ -30,6 +30,16 @@
 	// List of all the page elements in the DOM
 	var pages = book.getElementsByTagName( "section" );
 	
+	// aタグを保持しておきます。
++	var anchors = book.getElementsByTagName( "a" );
++	
++	// pagesの数を再利用したいので変数に保持しておきます。
++	var pagesLength = pages.length;
++	
++	// canvasのz-indexを1にしておきます。
++	canvas.style.zIndex = "1";
++	
+	
 	// Organize the depth of our pages and create the flip definitions
 	for( var i = 0, len = pages.length; i < len; i++ ) {
 		pages[i].style.zIndex = len - i;
