@@ -110,6 +110,8 @@
 		// Make sure the mouse pointer is inside of the book
 		if (Math.abs(mouse.x) < PAGE_WIDTH) {
 			if (mouse.x < 0 && page - 1 >= 0) {
+				// canvasのアニメーション中はcanvasがpagesより上に来るようにします。
++				canvas.style.zIndex = String( pagesLength + 2 );
 				// We are on the left side, drag the previous page
 				flips[page - 1].dragging = true;
 			}
