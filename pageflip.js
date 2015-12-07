@@ -39,7 +39,7 @@
 	// canvasのz-indexを1にしておきます。
 	canvas.style.zIndex = "1";
 	
-	
+	/*
 	// Organize the depth of our pages and create the flip definitions
 	for( var i = 0, len = pages.length; i < len; i++ ) {
 		pages[i].style.zIndex = len - i;
@@ -54,7 +54,7 @@
 			// True while the page is being dragged
 			dragging: false
 		} );
-	}
+	}*/
 	
 	// Resize the canvas to match the book size
 	canvas.width = BOOK_WIDTH + ( CANVAS_PADDING * 2 );
