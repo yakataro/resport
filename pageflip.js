@@ -56,6 +56,22 @@
 		} );
 	}*/
 	
+	for( var i = 0; i < pagesLength; i++ ) {
+		// 一番下になるページがbookより上になるようにします。
+		pages[i].style.zIndex = String( pagesLength - i + 1 );
+		// 後は同じ。
+		flips.push( {
+			// Current progress of the flip (left -1 to right +1)
+			progress: 1,
+			// The target value towards which progress is always moving
+			target: 1,
+			// The page DOM element related to this flip
+			page: pages[i], 
+			// True while the page is being dragged
+			dragging: false
+		} );
+	}
+	
 	// Resize the canvas to match the book size
 	canvas.width = BOOK_WIDTH + ( CANVAS_PADDING * 2 );
 	canvas.height = BOOK_HEIGHT + ( CANVAS_PADDING * 2 );
