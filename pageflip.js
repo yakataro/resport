@@ -118,6 +118,8 @@
 +				flips[page - 1].isFlipping = true;
 			}
 			else if (mouse.x > 0 && page + 1 < flips.length) {
+				// canvasのアニメーション中はcanvasがpagesより上に来るようにします。
++				canvas.style.zIndex = String( pagesLength + 2 );
 				// We are on the right side, drag the current page
 				flips[page].dragging = true;
 			}
