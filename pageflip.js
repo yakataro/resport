@@ -168,6 +168,13 @@
 			if( flip.dragging || Math.abs( flip.progress ) < 0.997 ) {
 				drawFlip( flip );
 			}
+			else if (flip.isFlipping && Math.abs(flip.target) === 1) {
++				// このif文の中身はアニメーションが終了した瞬間だけ実行されます。
++				// アニメーションが終了したらcanvasをpagesより下にします。
++				canvas.style.zIndex = "1";
++				// isFlippingもfalseになります。
++				flip.isFlipping = false;
++			}
 			
 		}
 		
