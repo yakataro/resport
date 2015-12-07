@@ -122,6 +122,7 @@
 +				canvas.style.zIndex = String( pagesLength + 2 );
 				// We are on the right side, drag the current page
 				flips[page].dragging = true;
+				flips[page].isFlipping = true;
 			}
 		}
 		
