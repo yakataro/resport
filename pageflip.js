@@ -173,6 +173,7 @@
 				canvas.style.zIndex = "1";
 				// isFlippingもfalseになります。
 				flip.isFlipping = false;
+			}
 			
 		}
 		
