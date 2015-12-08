@@ -12,7 +12,7 @@ if(!empty($_POST['mail'])){
 
  
   
-$success=mb_send_mail($to,$sub,"お名前：".$name."　本文：".$msg);
+$success=mb_send_mail($to,"お名前：".$name"　本文：".$msg);
 }
 ?>
   
