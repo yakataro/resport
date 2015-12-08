@@ -291,13 +291,13 @@ li {
 
 #book {
 	background: url("../images/book.png") no-repeat;
-	position: absolute;
+	position: relative;
 	width: 675px;
 	height: 260px;
 	left: 55%;
 	top: 58%;
 	margin-left: -400px;
-	margin-top: -125px;
+	margin-top: 5px;
 }
 
 #pages section {
