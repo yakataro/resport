@@ -458,13 +458,27 @@ label {
     text-align: right;
 }
 
-input, textarea {
+textarea {
     /* すべてのテキストフィールドのフォント設定を一致させる
        デフォルトで、textarea は等幅フォントが設定されている */
     font: 1em sans-serif;
 
     /* すべてのテキストフィールドを同じサイズにする */
     width: 300px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    /* テキストフィールドのボーダーの外見を同一にする */
+    border: 1px solid #999;
+}
+
+input {
+    /* すべてのテキストフィールドのフォント設定を一致させる
+       デフォルトで、textarea は等幅フォントが設定されている */
+    font: 1em sans-serif;
+
+    /* すべてのテキストフィールドを同じサイズにする */
+    width: 170px;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 
@@ -491,12 +505,33 @@ textarea {
 
 .button {
     /* ボタンを他のテキストフィールドと同じ場所に置く */
-    padding-left: 180px; /* label 要素と同じサイズ */
+    margin-top:10px;
 }
-button {
-    /* このマージンは、ラベルとテキストフィールドの間のスペースと
-       おおよそ同じスペースを表す */
-    margin-left: .5em;
+
+
+
+#formWrap {
+	width:680px;
+	margin:0 auto;
+	color:#555;
+	line-height:120%;
+	font-size:90%;
+	padding-top:10px;
+}
+table.formTable{
+	width:100%;
+	margin:0 auto;
+	border-collapse:collapse;
+}
+table.formTable td,table.formTable th{
+	border:1px solid #ccc;
+	padding:10px;
+}
+table.formTable th{
+	width:30%;
+	font-weight:normal;
+	background:#efefef;
+	text-align:left;
 }
 
 
