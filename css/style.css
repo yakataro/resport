@@ -534,6 +534,13 @@ table.formTable th{
 	text-align:left;
 }
 
+#my_footer05 { 
+	width: 680px;
+	height: 15px;
+	font-size: 80%;
+	padding-top: 50px;
+	text-align:center;
+}
 
 
 }
