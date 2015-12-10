@@ -1,26 +1,13 @@
-<?php 
-//php.iniの編集ができない場合の言語とエンコード指定
-mb_language("japanese");
-mb_internal_encoding("utf-8");
-  
-if(!empty($_POST['mail'])){
-    $to=$_POST['mail'];
-    $name=$_POST['name'];
-    $msg=$_POST['msg'];
-
- 
-
- 
-  
-$success=mb_send_mail($to,"お名前：".$name"　本文：".$msg);
-}
+<html>
+<head><title>Online Portfolio</title></head>
+<body>
+<?php
+ $name = $_POST['name'];
+ $mail = $_POST['mail'];
+ $msg = $_POST['msg'];
+ print("名前:$name<br />");
+ print("メール:$mail<br />");
+ print("内容:$msg<br />");
 ?>
-  
-  
-<?php 
-if($success){
-    echo('送信しました');
-}else{
-    echo('送信失敗！！');
-}
-?>
+</body>
+</html>
