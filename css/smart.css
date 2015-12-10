@@ -500,6 +500,12 @@ table.formTable th{
 }
 
 
-
+#my_footer05 { 
+	width: auto;
+	height: 15px;
+	font-size: 80%;
+	padding-top: 50px;
+	text-align:center;
+}
 
 }
