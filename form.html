@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>サンプル</title>
 <meta name="description" content="遠山隆広のポートフォリオです。">
-<meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
+<meta name="Keywords" content="" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
 <link rel="stylesheet" media="all" type="text/css" href="css/style.css" />
 <!-- ※デフォルトのスタイル（style.css） -->
 <link rel="stylesheet" media="all" type="text/css" href="css/tablet.css" />
@@ -34,55 +36,51 @@ $(function(){
   });
 });
 </script>
-
 </head>
 <body>
-		<div id="my_header">
-		 <h1><a href="index.html"><img src="images/title01.png" class="img03" alt="サンプルポートフォリオ"></a></h1>
-		</div>
-		<div id="my_navi">
-			<div id="toggle"><a href="#">MENU</a></div>
-			<ul id="menu" class="">
-				<li><a href="index.html">TOP</a></li>
-				<li><a href="history.html">HISTORY</a></li>
-			 	<li><a href="production.html">ACTUAL RESULTS</a></li>
-			 	<li><a href="form.html">FORM</a></li>
-			</ul>
-		 </div>
-			<div id="my_main">
-				<div id="my_contents06">
-					<ul id="pankuzu">
-					　<li><a href="index.html">TOP</a> &gt;</li>
-					　<li>FORM</li>
-					</ul>
-					<p id="my_title">FORM</p>
-					<div id="my_top02">
-				 	<form action="send.php" method="post" autocomplete="on">
-					    <div>
-					        <label for="name">お名前:</label>
-					        <input type="text" name="name" id="name" required />
-					    </div>
-					    <div>
-					        <label for="mail">アドレス:</label>
-					        <input type="email" name="mail" id="mail" required />
-					    </div>
-					    <div>
-					        <label for="msg">内容:</label>
-					        <textarea name="msg" id="msg"></textarea>
-					    </div>
-
-					    <div class="button">
-        					<button type="submit">この内容で送信</button>
-    					    </div>
-					</form>
-
-					</div>
-				</div>
-			 </div>
-				<div id="my_footer">Copyright (C) 2015</div>
-
-
-<!-- Jquery -->
-
+<div id="my_header">
+ <h1><a href="index.html"><img src="images/title01.png" class="img03" alt="サンプルポートフォリオ"></a></h1>
+</div>
+<div id="my_navi">
+ <div id="toggle"><a href="#">MENU</a></div>
+  <ul id="menu" class="">
+   <li><a href="index.html">TOP</a></li>
+   <li><a href="history.html">HISTORY</a></li>
+   <li><a href="production.html">ACTUAL RESULTS</a></li>
+   <li><a href="form.html">FORM</a></li>
+  </ul>
+ </div>
+ <div id="my_main">
+  <div id="my_contents06">
+   <ul id="pankuzu">
+  　<li><a href="index.html">TOP</a> &gt;</li>
+  　<li>FORM</li>
+   </ul>
+   <p id="my_title">FORM</p>
+  <div id="formWrap">
+    <p>下記フォームに必要事項を入力後、確認ボタンを押してください。</p>
+   <form method="post" action="mail.php">
+     <table class="formTable">
+       <tr>
+         <th>お名前</th>
+         <td><input size="20" type="text" name="お名前" /> ※必須</td>
+       </tr>
+       <tr>
+         <th>Mail（半角）</th>
+         <td><input size="30" type="text" name="Email" /> ※必須</td>
+       </tr>
+       <tr>
+         <th>お問い合わせ内容<br /></th>
+         <td><textarea name="お問い合わせ内容" cols="50" rows="5"></textarea></td>
+       </tr>
+     </table>
+     <p align="center" class="button">
+       <input type="submit" value="　 確認 　" />　<input type="reset" value="リセット" />
+     </p>
+   </form>
+   <p>※IPアドレスを記録しております。いたずらや嫌がらせ等はご遠慮ください</p>
+  </div>
+ </div>
+</div>
 </body>
 </html>
